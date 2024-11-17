@@ -1,0 +1,141 @@
+
+$primary-color: #00aaff;
+$background-color: #ffffff;
+$text-color: #000;
+$light-gray: #f2f2f2;
+$font-family: "Arial", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: $font-family;
+  color: $text-color;
+  background-color: $light-gray;
+}
+
+
+.container {
+  display: flex;
+  height: 100vh;
+
+  .left-col {
+    flex: 1;
+    padding: 50px 80px; 
+    background-color: $background-color;
+
+    .title-section {
+      display: flex;
+      align-items: center;
+      gap: 15px; 
+
+      img {
+        width: 80px; 
+        height: auto;
+      }
+
+      h1 {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.2; 
+      }
+    }
+
+    .login-form {
+      margin-top: 40px;
+
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .subtext {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 14px;
+          margin-bottom: 8px; 
+        }
+
+        input {
+          padding: 12px;
+          margin-bottom: 20px; 
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 14px;
+        }
+
+        .options {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          margin-bottom: 20px;
+
+          .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+          }
+
+          a {
+            color: $primary-color;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .btn-signin {
+          background-color: $primary-color;
+          color: #fff;
+          border: none;
+          padding: 12px;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          text-align: center;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+          }
+        }
+      }
+
+      .signup {
+        margin-top: 20px;
+        font-size: 14px;
+        text-align: center;
+
+        a {
+          color: $primary-color;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .right-col {
+    flex: 1;
+    background-color: #d3d3d3;
+  }
+}
