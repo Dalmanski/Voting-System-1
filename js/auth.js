@@ -78,7 +78,7 @@ function renderTimeline() {
     const posts = JSON.parse(localStorage.getItem("posts")) || [];
     const timeline = document.getElementById("timeline");
 
-    timeline.innerHTML = ""; 
+    timeline.innerHTML = ""; //clear text
 
     posts.forEach((post) => {
         const postCard = `
