@@ -5,6 +5,13 @@
     font-family: 'Helvetica Neue', sans-serif;
 }
 
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
 .wrapper {
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 2%, rgba(9,9,121,1) 98%);
@@ -154,10 +161,18 @@ button:hover {
     background-color: #0d95e8;
 }
 
+#main-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0; /* Allows flex child elements to overflow gracefully */
+}
+
 .main-content {
     flex: 1;
     margin-left: 250px;
-    overflow-y: auto;
+    overflow-y: hidden;
+    height: 100%;
 }
 
 header {
@@ -243,11 +258,70 @@ footer {
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 250px;
 }
 
 footer p {
     font-size: 14px;
 }
+
+.dropdown-content {
+    display: none;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    padding: 10px 0;
+}
+
+
+/* nakoy gi add diri */
+.sidebar nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.sidebar nav ul li {
+    position: relative;
+}
+
+.active-dropdown .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.section {
+    display: block;
+    height: 100%;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
 
 @media (max-width: 768px) {
     .container {

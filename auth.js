@@ -1,3 +1,12 @@
+// Show/hide sections
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.add('hidden');
+    });
+    document.getElementById(sectionId).classList.remove('hidden');
+}
+
 function register() {
     var username = document.getElementById("reg-username").value;
     var password = document.getElementById("reg-password").value;
@@ -109,3 +118,28 @@ window.onload = function () {
         showLoginForm();
     }
 };
+
+
+
+function toggleDropdown() {
+    var dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('active-dropdown');
+}
+
+// Access the iframe after it has fully loaded
+document.getElementById('iframeHarold').onload = function () {
+    const iframeHarold = document.getElementById('iframeHarold');
+    const documentHarold = iframeHarold.contentDocument || iframeHarold.contentWindow.document;
+
+    // Add event listeners for buttons
+    document.getElementById('active-elections').addEventListener('click', function () {
+        const targetElement = documentHarold.getElementById('active-elections');
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('upcoming-elections').addEventListener('click', function () {
+        const targetElement = documentHarold.getElementById('upcoming-elections');
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    });
+};
+
